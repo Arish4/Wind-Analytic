@@ -97,10 +97,9 @@ wind-forecast/
 ├── docker-compose.yml       run everything locally with one command
 ├── vercel.json              Vercel build (React static) + routing of /api/* to the Python function
 ├── api/index.py             Vercel serverless entry point that exposes the Django WSGI app
-├── requirements.txt         points Vercel at backend/requirements.txt
+├── requirements.txt         Python dependencies (root, so Vercel and Docker both find them)
 ├── backend/
 │   ├── manage.py
-│   ├── requirements.txt
 │   ├── config/              Django settings, urls, wsgi
 │   ├── forecasting/
 │   │   ├── domain/          entities, delivery (deadline), forecast_selection, metrics, horizon
@@ -146,7 +145,7 @@ Backend (Python 3.12):
 cd backend
 python -m venv .venv
 .venv/Scripts/activate        # macOS/Linux: source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r ../requirements.txt
 python manage.py runserver 8010
 ```
 
