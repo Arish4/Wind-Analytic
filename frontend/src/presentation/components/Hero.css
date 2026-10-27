@@ -1,0 +1,203 @@
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 32px;
+  padding: 44px 44px 40px;
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 72% 45%, rgba(255, 255, 255, 0.95), transparent 45%),
+    linear-gradient(160deg, #dde6f8 0%, #f1f5fd 50%, #cddaf4 100%);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.hero__wordmark {
+  position: absolute;
+  right: -20px;
+  bottom: -28px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(60px, 11vw, 150px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(10, 26, 63, 0.12);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero__intro {
+  position: relative;
+}
+
+.hero h1 {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero__lead {
+  max-width: 480px;
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.hero__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero__steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hero__steps li span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-size: 13px;
+}
+
+/* ---------- Decision card ---------- */
+
+.hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.decision-card {
+  position: relative;
+  align-self: center;
+  width: 100%;
+  max-width: 340px;
+  margin-left: auto;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  color: #fff;
+  background: linear-gradient(140deg, #3b82f6 0%, #1d4ed8 42%, #0a1a3f 100%);
+  box-shadow: 0 28px 60px rgba(29, 78, 216, 0.35);
+}
+
+.decision-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  opacity: 0.9;
+}
+
+.decision-card header strong {
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.decision-card__label {
+  margin: 22px 0 0;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.decision-card__value {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.decision-card__note {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.decision-card__rely {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 12px;
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.decision-card__rely span {
+  font-size: 13px;
+}
+
+.decision-card__rely strong {
+  grid-row: span 2;
+  align-self: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+
+.decision-card__rely small {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.decision-card footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.decision-card__empty {
+  margin: 28px 0 8px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 28px 18px;
+  }
+
+  .decision-card {
+    max-width: none;
+  }
+
+  .hero__wordmark {
+    font-size: 16vw;
+    right: -8px;
+    bottom: -12px;
+  }
+}
